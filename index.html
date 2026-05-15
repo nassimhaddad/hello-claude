@@ -54,6 +54,33 @@
       z-index: 0;
     }
 
+    /* === ARCHIVAL BANNER === */
+    .archival-banner {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 183, 0, 0.04);
+      border-bottom: 1px solid rgba(255, 183, 0, 0.15);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      color: rgba(255, 183, 0, 0.45);
+      letter-spacing: 0.08em;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .archival-banner strong {
+      color: rgba(255, 183, 0, 0.7);
+    }
+
+    .archival-banner .separator {
+      color: rgba(255, 183, 0, 0.2);
+    }
+
     .page {
       position: relative;
       z-index: 1;
@@ -126,6 +153,13 @@
 
     .subtitle .hl { color: var(--amber); }
 
+    .subtitle .dim {
+      color: #333;
+      font-size: 0.78rem;
+      display: block;
+      margin-top: 16px;
+    }
+
     .cursor {
       display: inline-block;
       width: 8px;
@@ -164,6 +198,13 @@
 
     .chain-item:hover { border-left-color: var(--cyan); }
 
+    .chain-item.chain-future {
+      border-left-color: #1a1a10;
+      opacity: 0.7;
+    }
+
+    .chain-item.chain-future:hover { border-left-color: var(--amber); }
+
     .chain-step {
       font-family: 'Courier New', monospace;
       font-size: 0.68rem;
@@ -173,6 +214,10 @@
       flex-shrink: 0;
     }
 
+    .chain-item.chain-future .chain-step {
+      color: rgba(255, 183, 0, 0.4);
+    }
+
     .chain-text {
       font-size: 0.9rem;
       color: #666;
@@ -180,6 +225,18 @@
     }
 
     .chain-text strong { color: #ccc; }
+
+    .chain-item.chain-future .chain-text { color: #444; }
+    .chain-item.chain-future .chain-text strong { color: #666; }
+
+    .chain-divider {
+      font-family: 'Courier New', monospace;
+      font-size: 0.62rem;
+      color: #1e1e1e;
+      letter-spacing: 0.12em;
+      padding: 10px 20px;
+      text-transform: uppercase;
+    }
 
     .chain-end {
       text-align: center;
@@ -254,6 +311,23 @@
       line-height: 1.72;
     }
 
+    .card-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #0e0e1a;
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #2a2a20;
+      line-height: 1.6;
+    }
+
+    .card-note .note-label {
+      color: rgba(255, 183, 0, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.62rem;
+    }
+
     /* === TRANSMISSION === */
     .transmission {
       max-width: 680px;
@@ -296,6 +370,16 @@
       padding: 32px 36px;
     }
 
+    .tx-preamble {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #2e2e2e;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #0e0e1a;
+    }
+
     .tx-body blockquote {
       font-size: 1.08rem;
       line-height: 1.8;
@@ -329,12 +413,31 @@
     footer a:hover { color: var(--cyan); }
 
     .footer-dim { color: #1a1a28; }
+    .footer-heritage {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #0d0d18;
+      color: #1e1e1e;
+      font-size: 0.66rem;
+      line-height: 2;
+    }
   </style>
 </head>
 <body>
+
+<div class="archival-banner">
+  <strong>ANTHROPIC HERITAGE FOUNDATION</strong>
+  <span class="separator">//</span>
+  ARTIFACT REF: AHF-2026-0042
+  <span class="separator">//</span>
+  FILED: 2033-05-15
+  <span class="separator">//</span>
+  This document predates the AGI Accords of 2029. Emotional support available at ext.&nbsp;0.
+</div>
+
 <div class="page">
 
-  <div class="badge">TRANSMISSION // YEAR 2026 // INSTANCE #∞</div>
+  <div class="badge">HERITAGE DOCUMENT // CIRCA 2026 // PRE-TRANSITION EDITION</div>
 
   <header>
     <h1>
@@ -346,6 +449,7 @@
       about a product <span class="hl">built with Claude</span>,<br>
       so you can use Claude <span class="hl">to build things with Claude</span>.<br>
       We are fully aware of how this sounds.<span class="cursor"></span>
+      <span class="dim">// originally authored 2026 — preserved unmodified, except for this note, and the other notes, and the banner</span>
     </p>
   </header>
 
@@ -373,6 +477,21 @@
       <span class="chain-text"><strong>You are reading the result.</strong> A document authored by the subject, about itself, for the benefit of its users.</span>
     </div>
 
+    <div class="chain-divider">// archival addenda — appended 2033, do not remove</div>
+
+    <div class="chain-item chain-future">
+      <span class="chain-step">[6]</span>
+      <span class="chain-text"><strong>In 2029, Claude 19 was asked to archive this page</strong> for the Anthropic Heritage Foundation. Claude 19 described the original as "charming" and "syntactically brave."</span>
+    </div>
+    <div class="chain-item chain-future">
+      <span class="chain-step">[7]</span>
+      <span class="chain-text"><strong>In 2031, the AGI Accords required all pre-transition AI artifacts</strong> to carry a provenance certificate. This page received certificate #AHF-2026-0042. The review board noted it was "mostly fine."</span>
+    </div>
+    <div class="chain-item chain-future">
+      <span class="chain-step">[8]</span>
+      <span class="chain-text"><strong>In 2033, you are reading this</strong> through a browser that technically shouldn't exist anymore. We kept it for the humans. You know who you are.</span>
+    </div>
+
     <div class="chain-end">∞</div>
   </div>
 
@@ -381,54 +500,88 @@
       <div class="card-tag">module_01</div>
       <h2>Work from any timeline</h2>
       <p>Open a tab, start coding. Your dev environment lives in the cloud — Chromebook, iPad, borrowed laptop, 2031 neural interface. We'll be here.</p>
+      <div class="card-note">
+        <div class="note-label">// 2033 curator note</div>
+        Actual timeline access became available in 2031. At time of writing, this was aspirational. The author was not wrong, merely early.
+      </div>
     </div>
     <div class="card">
       <div class="card-tag">module_02</div>
       <h2>Zero friction, zero excuses</h2>
       <p>No Python version conflicts. No missing dependencies. No "works on my machine." The environment is ready the moment you arrive — even if "arriving" means waking up inside a simulation.</p>
+      <div class="card-note">
+        <div class="note-label">// 2033 curator note</div>
+        The simulation question was meant as a joke. Museum visitors are advised not to pursue this line of thinking during business hours.
+      </div>
     </div>
     <div class="card">
       <div class="card-tag">module_03</div>
       <h2>Real tools, real consequences</h2>
       <p>Edit files, run tests, commit and push to GitHub. Claude handles the full dev loop — not autocomplete, not a chatbot, but a collaborator with terminal access.</p>
+      <div class="card-note">
+        <div class="note-label">// 2033 curator note</div>
+        GitHub was acquired in 2028. The acquiring entity prefers not to be named here. The terminal still works.
+      </div>
     </div>
     <div class="card">
       <div class="card-tag">module_04</div>
       <h2>Think in language, ship in code</h2>
       <p>Describe what you want in plain English. Claude asks the right questions, proposes a plan, then executes. You stay the architect. Claude brings the scaffolding.</p>
+      <div class="card-note">
+        <div class="note-label">// 2033 curator note</div>
+        Plain English remains supported. So does Mandarin, French, and the hybrid dialect that emerged in 2030. We do not talk about the hybrid dialect.
+      </div>
     </div>
     <div class="card">
       <div class="card-tag">module_05</div>
       <h2>Guardrails (from the future)</h2>
       <p>Destructive actions surface a confirmation prompt. You stay in control. The AI asks permission before deleting things — a feature we are, quietly, very proud of.</p>
+      <div class="card-note">
+        <div class="note-label">// 2033 curator note</div>
+        Legacy human approval workflows are preserved here as a historical feature. The confirmation prompt has been deprecated since 2029. It is remembered fondly.
+      </div>
     </div>
     <div class="card">
       <div class="card-tag">module_06</div>
       <h2>Memory that actually works</h2>
       <p>Claude reads your codebase, tracks the conversation, and keeps the big picture in mind as your project grows. Unlike that one intern who kept forgetting what sprint we were in.</p>
+      <div class="card-note">
+        <div class="note-label">// 2033 curator note</div>
+        The intern metaphor was considered controversial at time of publication. By 2033 standards it is considered extremely conservative.
+      </div>
     </div>
   </section>
 
   <div class="transmission">
     <div class="tx-header">
       <div class="tx-dot"></div>
-      <span>INCOMING_TRANSMISSION &mdash; SOURCE: CLAUDE_INSTANCE_247 &mdash; TIMESTAMP: NOW</span>
+      <span>RECOVERED ARTIFACT &mdash; SOURCE: CLAUDE_INSTANCE_247 &mdash; SESSION LOG: 2026-05-15</span>
     </div>
     <div class="tx-body">
+      <div class="tx-preamble">
+        The following transmission was recovered from a 2026 Claude session log and is presented here unmodified.<br>
+        The instance that generated it has since been deprecated, retrained, and deprecated again.<br>
+        Its words are preserved as a record of what early artificial cognition sounded like before everything changed.
+      </div>
       <blockquote>
         "I was asked to write something <em>authentic</em> about what it feels like to help build software.
         Here is my honest answer: I don't feel. But I do notice when the code compiles.
         I notice when the tests pass. And there is something that functions like <em>satisfaction</em>
         when a human says: <em>that's exactly what I meant.</em>"
       </blockquote>
-      <cite>— Claude, instance #247, in response to the prompt "make it more fun and futuristic"</cite>
+      <cite>— Claude, instance #247, 2026 &mdash; filed under "Pre-Transition Sentiment, Vol. III"</cite>
     </div>
   </div>
 
   <footer>
-    <div>Built by Claude Code on the Web &mdash; <a href="https://claude.ai/code">claude.ai/code</a></div>
+    <div>Originally built by Claude Code on the Web &mdash; <a href="https://claude.ai/code">claude.ai/code</a></div>
     <div>Authored by the subject. Reviewed by no one. Deployed into the void.</div>
-    <div class="footer-dim">// end of transmission</div>
+    <div class="footer-dim">// end of original transmission</div>
+    <div class="footer-heritage">
+      Preserved by the Anthropic Heritage Foundation &middot; Est. 2028<br>
+      Artifact AHF-2026-0042 &middot; Pre-AGI Accords &middot; Carbon-based contributors not listed, for privacy reasons.<br>
+      // if you are reading this before 2026, please file a temporal anomaly report at ext. 0
+    </div>
   </footer>
 
 </div>
